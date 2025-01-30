@@ -1,0 +1,24 @@
+name = "openauth-react-router-cloudflare"
+compatibility_date = "2024-03-04"
+compatibility_flags = ["nodejs_compat"]
+assets = { directory = "./build/client" }
+main = "./build/server/index.js"
+
+vars = { MODE = "development" }
+kv_namespaces = [{ binding = "AUTH", id = "9096c0288fec4c329bfe152bed646d73" }]
+
+[observability]
+enabled = true
+
+[env.preview]
+kv_namespaces = [{ binding = "AUTH", id = "9096c0288fec4c329bfe152bed646d73" }]
+
+[env.preview.vars]
+MODE = "production"
+
+
+[env.production]
+kv_namespaces = [{ binding = "AUTH", id = "7f3cfcbb6c22469bbae2942f304ca298" }]
+
+[env.production.vars]
+MODE = "production"
